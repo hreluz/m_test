@@ -12,6 +12,9 @@
 		<li>
 			<a href="/part1/problem2">Problem 2 </a>
 		</li>
+		<li>
+			<a href="/part1/problem3">Problem 3 </a>
+		</li>
 	</ul>
 
 </body>
