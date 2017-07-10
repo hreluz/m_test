@@ -2,6 +2,9 @@
 <html>
 <head>
 	<title>Clear Parenthesis</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
 	<script
 		  src="https://code.jquery.com/jquery-1.12.4.min.js"
 		  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
@@ -9,19 +12,26 @@
 </head>
 <body>
 	
-	<h1>Part 1 - Problem 3 </h1>
+	<div class="container">
+		<div class="panel">
 
-	<form method="POST" action="check.php" id="clearParenthesisForm">
-		<input type="text" name="parenthesis" value="" placeholder="Insert Ex: (((())))) (()...">
-		<button class="submit"> Go</button>
-	</form>
+			<h1>Part 1 - Problem 3 </h1>
 
-	
-	<div id="results" style="display: none;">
-		<h1>The clear parenthesis is :  <strong id="new_parenthesis"> this one </strong></h1>
+			<form method="POST" action="check.php" id="clearParenthesisForm" class="form-inline">
+				<input type="text" name="parenthesis" class="form-control" placeholder="Insert Ex: (((())))) (()...">
+				<button class="submit btn btn-primary"> Go</button>
+			</form>
+
+			
+			<div id="results" style="display: none;">
+				<h1>The clear parenthesis is :  <strong id="new_parenthesis"> this one </strong></h1>
+			</div>
+
+		</div>
+		
+    	<p><a href="javascript:history.back()" class="btn btn-success">Back</a></p>
 	</div>
-
-	<button> <a href="/">Back</a> </button>
+	
 
 	<script type="text/javascript">
 		$(document).ready(function(){
