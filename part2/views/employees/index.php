@@ -31,4 +31,17 @@
 
 	</table>
 
+	<hr>
+
+	Service Employee API by Salary
+	<form action="/api/employees" target="_blank">
+		<input type="number" name="s_min" placeholder="Salary Min">
+		<input type="number" name="s_max" placeholder="Salary Max">
+		<select name="type">
+			<option value="xml">xml</option>
+			<option value="json">json</option>
+		</select>
+		<button type="submit">Go</button>		
+	</form>
+
 {% endblock %}

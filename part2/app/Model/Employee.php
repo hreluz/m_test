@@ -15,6 +15,24 @@ class Employee
 		$this->data = json_decode($data, true);
 	}
 
+	public function filterBySalary(Request $request)
+	{
+		//Get Min and Max, if they do not exist, set up default values
+		$min = $request->getParam('s_min') && $request->getParam('s_min') >= 0 ? $request->getParam('s_min') : 0;
+		$max = $request->getParam('s_max') && $request->getParam('s_max') >= 0 ? $request->getParam('s_max') : -1;
+		$employees = [];
+
+		foreach ($this->data as $employee):
+			//Get Salary without dollar symbol, and without points in number
+			$salary = floatval(str_replace(',', '', ltrim($employee['salary'],'$')));
+
+			if($max > $min && $salary >= $min && $salary <= $max || $max == -1 && $salary >= $min)
+				$employees[] = $employee;
+		endforeach;
+		
+		return $employees;
+	}
+
 
 	public function get(Request $request)
 	{
