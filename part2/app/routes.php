@@ -4,14 +4,11 @@ use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 use App\Controllers\EmployeesController;
 
-//Hello 
+//Redirect
 
-$app->get('/hello/{name}', function (Request $request, Response $response) {
 
-    return $this->view->render($response, 'hello.php', [
-        'name' =>  $request->getAttribute('name')
-    ]);
-    
+$app->get('/', function (Request $request, Response $response) {
+	return $response->withRedirect('/employees');
 });
 
 
