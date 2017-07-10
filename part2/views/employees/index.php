@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Developers SAC.</title>
-</head>
-<body>
+{% extends 'layout.php' %}
+
+{% block content %}
+
 	<h1>Developers SAC</h1>
 	<form>
 		<input type="text" name="email" placeholder="Enter email">
@@ -18,6 +16,7 @@
 			<th>Email</th>
 			<th>Position</th>
 			<th>Salary</th>
+			<th>Detail</th>
 		</tr>
 		
 		{% for employee in employees %}
@@ -25,10 +24,11 @@
 				<td>{{ employee.name }}</td>
 				<td>{{ employee.email }}</td>
 				<td>{{ employee.position }}</td>							
-				<td>{{ employee.salary }}</td>							
+				<td>{{ employee.salary }}</td>	
+				<td> <a href="/employees/{{ employee.id }}">Detail</a> </td>						
 			</tr>
 		{% endfor %}
 
 	</table>
-</body>
-</html>
+
+{% endblock %}

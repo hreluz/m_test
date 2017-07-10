@@ -20,3 +20,10 @@ $app->get('/employees', function (Request $request, Response $response) {
 	$data = (new EmployeesController)->index($request);   
 	return view($this, $data['view'],$data['data']);
 });
+
+
+//Get employee detail
+$app->get('/employees/{id}', function (Request $request, Response $response) {
+	$data = (new EmployeesController)->show($request->getAttribute('id'));   
+	return view($this, $data['view'],$data['data']);
+});

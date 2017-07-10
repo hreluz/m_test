@@ -34,6 +34,20 @@ class Employee
 		return $employees;
 	}
 
+	public function findBy($field_name, $field_value)
+	{
+		$employee = [];
+
+		foreach ($this->data as $e):
+			if($e[$field_name] == $field_value):
+				$employee = $e;
+				break;
+			endif;
+		endforeach;
+
+		return $employee;
+	}
+
 	//Private Methods
 
 	//Search if there are parameters GET, and if those are also in the searchable array

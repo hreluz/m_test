@@ -18,4 +18,14 @@ class EmployeesController {
 	    ];
 	}
 
+	public function show($id)
+	{
+		return [
+			'view' => 'employees/detail.php',
+			'data' => [
+				'employee' => (new Employee)->findBy('id',$id)
+			]
+		];
+
+	}
 }
